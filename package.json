@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "my-app-v2",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Nicky Yim's portfolio website. v2.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Nicky Yim <nicky.yim@outlook.com>",
   "dependencies": {
     "gatsby": "^3.1.2",
     "gatsby-plugin-gatsby-cloud": "^2.1.0",
@@ -20,6 +20,14 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-webpack-plugin": "^2.5.3",
+    "gatsby-plugin-eslint": "^3.0.0",
     "prettier": "2.2.1"
   },
   "keywords": [
@@ -37,9 +45,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/nicky-yim/my-app-v2"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/nicky-yim/my-app-v2/issues"
   }
 }
