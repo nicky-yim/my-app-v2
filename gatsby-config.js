@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Nicky Yim | Full Stack Engineer`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
@@ -41,5 +41,14 @@ module.exports = {
         // Any eslint-webpack-plugin options below
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Poppins'],
+        },
+      },
+    },
+    `gatsby-plugin-styled-components`,
   ],
 };
