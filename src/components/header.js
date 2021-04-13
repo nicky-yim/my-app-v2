@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import Logo from './logo';
 
 const StyledHeader = styled.header`
@@ -23,9 +22,5 @@ const Header = () => (
     </Wrapper>
   </StyledHeader>
 );
-
-Header.propTypes = {};
-
-Header.defaultProps = {};
 
 export default Header;

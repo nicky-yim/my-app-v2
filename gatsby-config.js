@@ -1,8 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Nicky Yim | Full Stack Engineer`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Nicky Yim | Full Stack Developer`,
+    description: `Nicky Yim is a full stack developer from Toronto.`,
+    author: `Nicky Yim`,
+    email: `nicky.yim@outlook.com`,
+    github: `https://github.com/nicky-yim`,
+    linkedin: `https://www.linkedin.com/in/nicky-yim`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -50,5 +53,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `mdx`,
+        path: `${__dirname}/src/mdx/`,
+      },
+    },
+    `gatsby-plugin-mdx`,
   ],
 };

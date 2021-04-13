@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { colors, fonts } from '../styles/globalStyles';
 
 const N = styled.span`

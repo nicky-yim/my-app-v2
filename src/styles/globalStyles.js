@@ -42,17 +42,19 @@ const GlobalStyles = createGlobalStyle`
     color: ${colors.highlight};
     transition: all 0.2s ease-in-out;
 
-    :hover {
-      color: ${colors.purple};
-    }
-
     :after {
       content: '';
       position: absolute;
       bottom: -2px;
       left: 0;
       right: 0;
-      border-bottom: 1px solid ${colors.secondary};
+      height: 1px;
+      background: ${colors.secondary};
+      transition: all 0.2s ease-in-out;
+    }
+
+    :hover {
+      color: ${colors.purple};
     }
   }
 `;
