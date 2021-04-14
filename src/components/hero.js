@@ -4,17 +4,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
-import { colors, sizes } from '../styles/globalStyles';
 
-const Section = styled.section`
-  margin-top: 3em;
-  margin-bottom: 3em;
-
-  @media (max-width: ${sizes.md}px) {
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-`;
+import Link from './elements/link';
+import { colors, sizes, Section } from '../styles/globalStyles';
 
 const Greeting = styled.h2`
   font-size: 2em;
@@ -46,12 +38,6 @@ const Paragraph = styled.p`
     font-size: 1.25em;
   }
 `;
-
-const Link = ({ href, children }) => (
-  <a href={href} rel="noopener noreferrer" target="_blank">
-    {children}
-  </a>
-);
 
 const Hero = () => {
   const { mdx } = useStaticQuery(graphql`

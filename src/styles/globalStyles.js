@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const colors = {
   primary: 'rgba(255, 255, 255, .7)',
@@ -59,4 +59,34 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export { colors, sizes, fonts, GlobalStyles };
+const Section = styled.section`
+  margin-top: 10vh;
+  margin-bottom: 15vh;
+
+  @media (max-width: ${sizes.md}px) {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+`;
+
+const SectionHeading = styled.h4`
+  font-family: ${fonts.code};
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: ${colors.secondary};
+
+  @media (max-width: ${sizes.md}px) {
+    font-size: 1.1em;
+  }
+
+  :before {
+    content: '<';
+  }
+  
+  :after {
+    content: ' />';
+  }
+`;
+
+export { colors, sizes, fonts, GlobalStyles, Section, SectionHeading };
