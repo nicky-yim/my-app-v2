@@ -113,7 +113,18 @@ const Project = ({ childMdx }) => {
 };
 
 Project.propTypes = {
-  childMdx: PropTypes.node.isRequired,
+  childMdx: PropTypes.shape({
+    frontmatter: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      year: PropTypes.number.isRequired,
+      url: PropTypes.string,
+      source: PropTypes.string,
+      tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+      image:
+        PropTypes.object.isRequired /* eslint 'react/forbid-prop-types': 0 */,
+    }).isRequired,
+    body: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Project;
