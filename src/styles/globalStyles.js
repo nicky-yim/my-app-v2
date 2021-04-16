@@ -60,13 +60,8 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const Section = styled.section`
-  margin-top: 10vh;
-  margin-bottom: 15vh;
-
-  @media (max-width: ${sizes.md}px) {
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-  }
+  padding-top: 5vh;
+  padding-bottom: 7.5vh;
 `;
 
 const SectionHeading = styled.h4`
@@ -74,7 +69,6 @@ const SectionHeading = styled.h4`
   font-size: 1.2em;
   font-weight: 600;
   text-transform: uppercase;
-  color: ${colors.secondary};
 
   @media (max-width: ${sizes.md}px) {
     font-size: 1.1em;
@@ -83,10 +77,44 @@ const SectionHeading = styled.h4`
   :before {
     content: '<';
   }
-  
+
   :after {
     content: ' />';
   }
 `;
 
-export { colors, sizes, fonts, GlobalStyles, Section, SectionHeading };
+const StyledButton = styled.a`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1em;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${colors.blueHighlight};
+  color: ${colors.blueHighlight};
+  background-color: ${colors.background};
+  transition: all 0.2s ease-in-out;
+
+  :after {
+    content: none;
+  }
+
+  :hover {
+    border-color: ${colors.blue};
+    color: ${colors.blue};
+    transform: scale(1.05);
+  }
+`;
+
+export {
+  colors,
+  sizes,
+  fonts,
+  GlobalStyles,
+  Section,
+  SectionHeading,
+  StyledButton,
+};

@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import styled from 'styled-components';
+import { Fade } from 'react-reveal';
 
 import Link from './elements/link';
 import TagList from './elements/tagList';
-import Button from './elements/button';
-import { sizes, colors } from '../styles/globalStyles';
+import { sizes, colors, StyledButton } from '../styles/globalStyles';
 
 const Container = styled.div`
   width: 100%;
@@ -52,7 +52,6 @@ const Title = styled.h3`
 `;
 
 const Year = styled.span`
-  color: ${colors.secondary};
   padding: 1em;
 `;
 
@@ -69,11 +68,23 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const Project = ({ childMdx }) => {
-  const { frontmatter, body } = childMdx;
-  const { title, year, url, source, tags, image } = frontmatter;
-  const img = getImage(image);
+const StyledFiExternalLink = styled(FiExternalLink)`
+  margin-left: 5px;
+`;
 
+const StyledFiGithub = styled(FiGithub)`
+  margin-right: 5px;
+`;
+
+const StyledGatsbyImage = styled(GatsbyImage)`
+  transition: transform 0.3s ease-in-out;
+
+  :hover {
+    transform: scale(1.05);
+  }
+`;
+
+const Project = ({ title, year, url, source, tags, img, body }) => {
   const components = {
     p: Paragraph,
     a: Link,
@@ -82,49 +93,59 @@ const Project = ({ childMdx }) => {
   return (
     <Container>
       <ImgContainer>
-        <GatsbyImage image={img} alt="ADI Printing" />
+        <StyledGatsbyImage image={img} alt={title} />
       </ImgContainer>
       <Content>
-        <Heading>
-          <Title>{title}</Title>
-          <Year>{year}</Year>
-        </Heading>
-        <TagList tags={tags} />
-        <MDXProvider components={components}>
-          <MDXRenderer>{body}</MDXRenderer>
-        </MDXProvider>
-        <ButtonContainer>
-          {url && (
-            <Button href={url}>
-              Visit&nbsp;
-              <FiExternalLink />
-            </Button>
-          )}
-          {source && (
-            <Button href={source}>
-              <FiGithub />
-              &nbsp;Source
-            </Button>
-          )}
-        </ButtonContainer>
+        <Fade>
+          <Heading>
+            <Title>{title}</Title>
+            <Year>{year}</Year>
+          </Heading>
+          <TagList tags={tags} />
+          <MDXProvider components={components}>
+            <MDXRenderer>{body}</MDXRenderer>
+          </MDXProvider>
+          <ButtonContainer>
+            {url && (
+              <StyledButton
+                href={url}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Visit
+                <StyledFiExternalLink />
+              </StyledButton>
+            )}
+            {source && (
+              <StyledButton
+                href={source}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <StyledFiGithub />
+                Source
+              </StyledButton>
+            )}
+          </ButtonContainer>
+        </Fade>
       </Content>
     </Container>
   );
 };
 
 Project.propTypes = {
-  childMdx: PropTypes.shape({
-    frontmatter: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      year: PropTypes.number.isRequired,
-      url: PropTypes.string,
-      source: PropTypes.string,
-      tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-      image:
-        PropTypes.object.isRequired /* eslint 'react/forbid-prop-types': 0 */,
-    }).isRequired,
-    body: PropTypes.string.isRequired,
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired,
+  url: PropTypes.string,
+  source: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  img: PropTypes.object.isRequired /* eslint 'react/forbid-prop-types': 0 */,
+  body: PropTypes.string.isRequired,
+};
+
+Project.defaultProps = {
+  url: ``,
+  source: ``,
 };
 
 export default Project;

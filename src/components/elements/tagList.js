@@ -12,7 +12,7 @@ const Tags = styled.ul`
 
 const Tag = styled.li`
   display: inline-block;
-  font-size: 0.75em;
+  font-size: 0.8em;
   font-weight: 600;
   padding: 2px 8px;
   margin: 0 4px;

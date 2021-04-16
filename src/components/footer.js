@@ -68,6 +68,7 @@ const Footer = () => {
         <Icon
           href={`mailto:${site.siteMetadata?.email}`}
           alt="Email"
+          aria-label="Email"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -76,6 +77,7 @@ const Footer = () => {
         <Icon
           href={site.siteMetadata?.github}
           alt="Github"
+          aria-label="Github"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -84,6 +86,7 @@ const Footer = () => {
         <Icon
           href={site.siteMetadata?.linkedin}
           alt="LinkedIn"
+          aria-label="LinkedIn"
           rel="noopener noreferrer"
           target="_blank"
         >

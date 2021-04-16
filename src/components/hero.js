@@ -4,9 +4,11 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
+import { Fade } from 'react-reveal';
+import { FiMessageSquare } from 'react-icons/fi';
 
 import Link from './elements/link';
-import { colors, sizes, Section } from '../styles/globalStyles';
+import { colors, sizes, Section, StyledButton } from '../styles/globalStyles';
 
 const Greeting = styled.h2`
   font-size: 2em;
@@ -39,6 +41,14 @@ const Paragraph = styled.p`
   }
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+`;
+
+const StyledFiMessageSquare = styled(FiMessageSquare)`
+  margin-left: 5px;
+`;
+
 const Hero = () => {
   const { mdx } = useStaticQuery(graphql`
     query {
@@ -59,9 +69,19 @@ const Hero = () => {
 
   return (
     <Section>
-      <MDXProvider components={components}>
-        <MDXRenderer>{mdx.childMdx.body}</MDXRenderer>
-      </MDXProvider>
+      <Fade down>
+        <MDXProvider components={components}>
+          <MDXRenderer>{mdx.childMdx.body}</MDXRenderer>
+        </MDXProvider>
+      </Fade>
+      <Fade up>
+        <ButtonContainer>
+          <StyledButton onClick={() => alert('hi')}>
+            Get in touch
+            <StyledFiMessageSquare />
+          </StyledButton>
+        </ButtonContainer>
+      </Fade>
     </Section>
   );
 };
