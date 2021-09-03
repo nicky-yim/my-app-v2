@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
+  body, input {
     background: ${colors.background};
     color: ${colors.primary};
     margin: 0;

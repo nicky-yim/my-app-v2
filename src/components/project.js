@@ -57,6 +57,7 @@ const Year = styled.span`
 
 const Paragraph = styled.p`
   color: ${colors.primary};
+  font-size: 1.25em;
 `;
 
 const ButtonContainer = styled.div`

@@ -6,18 +6,15 @@ import styled from 'styled-components';
 import { Fade } from 'react-reveal';
 
 import Link from './elements/link';
-import { sizes, Section, SectionHeading } from '../styles/globalStyles';
+import { Section, SectionHeading } from '../styles/globalStyles';
 
 const Container = styled.div`
-  max-width: 80%;
-
-  @media (max-width: ${sizes.md}px) {
-    max-width: 100%;
-  }
+  width: 100%;
 `;
 
 const Paragraph = styled.p`
   margin-top: 2em;
+  font-size: 1.25em;
 `;
 
 const About = () => {
