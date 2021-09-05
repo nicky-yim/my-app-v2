@@ -2,7 +2,7 @@
   "extends": ["airbnb", "airbnb/hooks", "airbnb/whitespace", "prettier"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": ["error", "unix"]
   },
   "parserOptions": {
     "ecmaVersion": 2020
