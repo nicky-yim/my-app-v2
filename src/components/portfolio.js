@@ -16,6 +16,7 @@ const Portfolio = () => {
         nodes {
           childMdx {
             frontmatter {
+              index
               title
               year
               url
