@@ -46,7 +46,7 @@ const Heading = styled.div`
   align-items: center;
 `;
 
-const Title = styled.h3`
+const Title = styled.span`
   color: ${colors.highlight};
   font-size: 1.25em;
 `;

@@ -64,7 +64,7 @@ const Section = styled.section`
   padding-bottom: 7.5vh;
 `;
 
-const SectionHeading = styled.h4`
+const SectionHeading = styled.span`
   font-family: ${fonts.code};
   font-size: 1.2em;
   font-weight: 600;
