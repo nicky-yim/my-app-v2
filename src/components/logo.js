@@ -32,6 +32,7 @@ const LogoLink = styled.a`
   font-family: ${fonts.code};
   font-size: 1.8em;
   font-weight: 600;
+  font-display: swap;
   color: ${colors.blue};
   text-decoration: none;
   transition: all 0.4s ease-in-out;

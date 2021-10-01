@@ -34,6 +34,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-weight: 200;
     font-family: ${fonts.text};
+    font-display: swap;
   }
 
   a {
@@ -68,6 +69,7 @@ const SectionHeading = styled.span`
   font-family: ${fonts.code};
   font-size: 1.2em;
   font-weight: 600;
+  font-display: swap;
   text-transform: uppercase;
 
   @media (max-width: ${sizes.md}px) {
